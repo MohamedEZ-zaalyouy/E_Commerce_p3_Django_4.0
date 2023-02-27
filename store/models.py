@@ -1,14 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
 
-# ================================================
-#  Start Model Customer
-# ================================================
+# Create your models here.
 
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, null=True, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200)
 
@@ -16,9 +14,6 @@ class Customer(models.Model):
         return self.name
 
 
-# ================================================
-#  Start Model Products
-# ================================================
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.FloatField()
@@ -36,10 +31,6 @@ class Product(models.Model):
             url = ''
         return url
 
-# =================================================
-# Start Model Order
-# =================================================
-
 
 class Order(models.Model):
     customer = models.ForeignKey(
@@ -52,6 +43,15 @@ class Order(models.Model):
         return str(self.id)
 
     @property
+    def shipping(self):
+        shipping = False
+        orderitems = self.orderitem_set.all()
+        for i in orderitems:
+            if i.product.digital == False:
+                shipping = True
+        return shipping
+
+    @property
     def get_cart_total(self):
         orderitems = self.orderitem_set.all()
         total = sum([item.get_total for item in orderitems])
@@ -62,20 +62,6 @@ class Order(models.Model):
         orderitems = self.orderitem_set.all()
         total = sum([item.quantity for item in orderitems])
         return total
-
-    @property
-    def shipping(self):
-        shipping = False
-        orderitems = self.orderitem_set.all()
-        for i in orderitems:
-            if i.product.digital == False:
-                shipping = True
-
-        return shipping
-
-# ================================================
-#  Start Model OrderItem
-# ================================================
 
 
 class OrderItem(models.Model):
@@ -90,11 +76,7 @@ class OrderItem(models.Model):
         return total
 
 
-# ================================================
-#  Start Model shippingAddress
-# ================================================
-
-class shippingAddress(models.Model):
+class ShippingAddress(models.Model):
     customer = models.ForeignKey(
         Customer, on_delete=models.SET_NULL, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
