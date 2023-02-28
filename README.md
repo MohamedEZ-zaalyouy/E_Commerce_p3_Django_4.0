@@ -6,6 +6,12 @@ We will start first by setting up our templates and data structure, then moving 
 
 After we complete basic checkout with a logged in user, we will add in the ability for users to checkout as a guest using cookies
 
+# What We Building
+
+![](img/1.png)
+
+This product will be a fully functioning eCommerce website from start to checkout functionality. Users will have the ability to add multiple products to cart, varying from physical to digital products.
+
 # Models
 
 ![](img/models.png)
