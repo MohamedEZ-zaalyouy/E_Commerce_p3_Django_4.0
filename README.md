@@ -14,7 +14,11 @@ This product will be a fully functioning eCommerce website from start to checkou
 
 ## Payment Integration
 
+![](img/2.png)
+
 ![](img/3.png)
+
+Payment integration will be handled with PayPal offering the ability to checkout with a PayPal account and checkout with PayPal debit/credit card. Stripe integration is simple to add but for the purpose of international transactions we will focus on PayPal for international availability and security.
 
 # Models
 
