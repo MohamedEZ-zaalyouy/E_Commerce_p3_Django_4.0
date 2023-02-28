@@ -12,6 +12,10 @@ After we complete basic checkout with a logged in user, we will add in the abili
 
 This product will be a fully functioning eCommerce website from start to checkout functionality. Users will have the ability to add multiple products to cart, varying from physical to digital products.
 
+## Payment Integration
+
+![](img/3.png)
+
 # Models
 
 ![](img/models.png)
