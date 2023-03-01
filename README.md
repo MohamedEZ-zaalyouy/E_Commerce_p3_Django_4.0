@@ -66,6 +66,8 @@ An order Item is one item with an order. For example, a shopping cart may consis
 
 Not every order will need shipping information. For orders containing physical products that need to be shipping we will need to create an instance of the shipping model to know where to send the order. Shipping will simply be a child of the order model when necessary.
 
+#
+
 #### Before running this project you need intall below list apps and packages
 
 Install Python 3.7 or above -> https://www.python.org/
