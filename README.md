@@ -9,6 +9,11 @@ After we complete basic checkout with a logged in user, we will add in the abili
 # Project Structure
 
 Before we start building, let's go over the core structure of this project. I’ll first go over templates and what each one will handle and then we’ll cover our models and page functionality.
+
+## Templates
+
+This project will focus on 3 main templates, store.html, cart.html and checkout.html.
+
 ![](img/4.png)
 
 # What We Building
