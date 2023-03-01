@@ -6,7 +6,14 @@ We will start first by setting up our templates and data structure, then moving 
 
 After we complete basic checkout with a logged in user, we will add in the ability for users to checkout as a guest using cookies
 
+# Project Structure
+
+Before we start building, let's go over the core structure of this project. I’ll first go over templates and what each one will handle and then we’ll cover our models and page functionality.
+![](img/4.png)
+
 # What We Building
+
+### Store.html
 
 ![](img/1.png)
 
@@ -14,7 +21,11 @@ This product will be a fully functioning eCommerce website from start to checkou
 
 ## Payment Integration
 
+### Cart.html
+
 ![](img/2.png)
+
+### Checkout.html
 
 ![](img/3.png)
 
